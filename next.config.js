@@ -2,5 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
 }
+const path = require('path')
 
 module.exports = nextConfig
+module.exports = {
+  sassOptions: {
+    fiber: false,
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+}

@@ -1,0 +1,64 @@
+.mainSlider {
+  .block {
+    position: fixed;
+    width: 100%;
+    bottom: 80px;
+    .button {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .title {
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 102%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    font-weight: 400;
+    font-size: 32px;
+    color: #FFFFFF;
+  }
+  .image {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    &::after {
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5226) 13.24%, rgba(0, 0, 0, 0) 37.88%), linear-gradient(354.48deg, rgba(7, 12, 60, 0.549) 23.35%, rgba(0, 0, 0, 0) 50.1%);
+    }
+  }
+  .progress {
+    position: fixed;
+    width: 100%;
+    bottom: 40px;
+  }
+  .circle {
+    position: fixed;
+    z-index: -1;
+    height: 3000px;
+    width: 3000px;
+    left: -1100px;
+    top: -310px;
+  }
+  .secondary__circle {
+    position: fixed;
+    z-index: -1;
+    height: 1700px;
+    width: 1700px;
+    left: -800px;
+    bottom: -1400px;
+  }
+}
+
