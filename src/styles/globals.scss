@@ -26,6 +26,14 @@ body {
   position: relative;
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  position: relative;
+  overflow: hidden;
+}
 
 //transitions
 .show-enter {
@@ -60,4 +68,10 @@ body {
 .spin-exit-active {
   transform: rotate(360deg);
   transition: transform 3000ms ease-out; 
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 90vw;
+  }
 }

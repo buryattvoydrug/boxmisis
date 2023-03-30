@@ -62,3 +62,31 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .mainSlider {
+    .block {
+      .button {
+        position: relative;
+        margin: 15px 0 0 0;
+      }
+    }
+    .title {
+      font-size: 24px;
+    }
+    .subtitle {
+      font-size: 16px;
+    }
+    .circle {
+      height: 2200px;
+      width: 2200px;
+      left: -1015px;
+      top: -200px;
+    }
+    .secondary__circle {
+      height: 1500px;
+      width: 1500px;
+      left: -720px;
+      bottom: -1235px;
+    }
+  }
+}
