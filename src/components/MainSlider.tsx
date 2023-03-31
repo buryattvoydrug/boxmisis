@@ -55,7 +55,7 @@ export default function MainSlider({slides}: {slides: Array<ISlide>}) {
           <CSSTransition
             in={show}
             timeout={3000}
-            classNames="spin"
+            classNames="secondary-spin"
           >
             <div className={styles.secondary__circle}>
               <Image src="/bigcircle.svg" fill alt=''></Image>

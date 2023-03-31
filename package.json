@@ -22,7 +22,7 @@
     "contentful-management": "^10.31.4",
     "contentful-typescript-codegen": "^3.4.0",
     "dotenv": "^16.0.3",
-    "next": "13.2.4",
+    "next": "13.1.1",
     "prettier": "^2.8.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",

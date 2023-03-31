@@ -1,8 +1,10 @@
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  z-index: 3;
   .logo {
     display: flex;
     align-items: center;
@@ -29,7 +31,7 @@
 
     }
   }
-  .nav ul {
+  .nav ul, .menu ul {
     display: flex;
     li {
       text-transform: uppercase;
@@ -39,6 +41,43 @@
       cursor: pointer;
     }
   }
+  .menu {
+    position: fixed;
+    top:200px;
+    right: 20px;
+    ul {
+      flex-direction: column;
+      align-items: end;
+      li {
+        padding: 15px;
+        font-size: 18px;
+      }
+    }
+    .social {
+      position: fixed;
+      bottom: 40px;
+      right:35px;
+      display: flex;
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          padding: 0;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  
+}
+
+.header__circle {
+  position: fixed;
+  z-index: 1;
+  height: 3000px;
+  width: 3000px;
+  left: -1600px;
+  top: -300px;
 }
 
 @media screen and (max-width: 1024px) {

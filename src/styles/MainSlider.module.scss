@@ -11,16 +11,18 @@
   }
   .title {
     font-weight: 900;
-    font-size: 64px;
+    font-size: 4vw;
     line-height: 102%;
     text-transform: uppercase;
     color: #FFFFFF;
     margin-bottom: 10px;
+    padding-right: 20%;
   }
   .subtitle {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 2vw;
     color: #FFFFFF;
+    padding-right: 20%;
   }
   .image {
     position: absolute;
@@ -47,18 +49,18 @@
   .circle {
     position: fixed;
     z-index: -1;
-    height: 3000px;
-    width: 3000px;
-    left: -1100px;
-    top: -310px;
+    height: 220vw;
+    width: 220vw;
+    left: -78vw;
+    top: -22vw;
   }
   .secondary__circle {
     position: fixed;
     z-index: -1;
-    height: 1700px;
-    width: 1700px;
-    left: -800px;
-    bottom: -1400px;
+    height: 126vw;
+    width: 126vw;
+    left: -62vw;
+    bottom: -104vw;
   }
 }
 
@@ -72,9 +74,12 @@
     }
     .title {
       font-size: 24px;
+      padding-right: 0;
+
     }
     .subtitle {
       font-size: 16px;
+      padding-right: 0;
     }
     .circle {
       height: 2200px;

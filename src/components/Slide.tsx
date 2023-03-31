@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Button } from '@material-ui/core'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { ISlide } from './MainSlider';
+import Link from 'next/link';
 
 interface SlidePropsI {
   slideState: ISlide,
@@ -43,12 +44,15 @@ export default function Slide({ slideState, showState }: SlidePropsI) {
             <h2 className={styles.title}>{slide.titile}</h2>
             <h3 className={styles.subtitle}>{slide.subtitle}</h3>
             <div className={styles.button}>
-              <Button 
-                  variant="contained" 
-                  endIcon={<ArrowForwardIcon />}
-                  >
-                Подробнее
-              </Button>
+              <Link href={slide.link || '/'}>
+                <Button 
+                    variant="contained" 
+                    endIcon={<ArrowForwardIcon />}
+                    >
+                  Подробнее
+                </Button>
+              </Link>  
+              
             </div>
           </div>
         </div>
