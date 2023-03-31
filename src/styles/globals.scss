@@ -17,7 +17,7 @@ ul {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #000000;
+  background: #0A1E64;
 }
 
 .container {
@@ -26,6 +26,29 @@ body {
   position: relative;
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  &::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url('/bg.svg');
+    background-size: 200%;
+    background-position: 70% 20%;
+    background-attachment: fixed;
+  }
+}
 
 //transitions
 .show-enter {
@@ -48,7 +71,7 @@ body {
 }
 
 .spin-enter {
-  transform: rotate(0);
+  transform: rotate(0deg);
 }
 .spin-enter-active {
   transform: rotate(360deg);
@@ -60,4 +83,55 @@ body {
 .spin-exit-active {
   transform: rotate(360deg);
   transition: transform 3000ms ease-out; 
+}
+
+.secondary-spin-enter {
+  transform: rotate(0deg);
+}
+.secondary-spin-enter-active {
+  transform: rotate(360deg);
+  transition: transform 2000ms ease-out; 
+}
+.secondary-spin-exit {
+  transform: rotate(360deg);
+}
+.secondary-spin-exit-active {
+  transform: rotate(360deg);
+  transition: transform 2000ms ease-out; 
+}
+
+.header-spin-enter {
+  transform: rotate(0);
+}
+.header-spin-enter-done {
+  transform: rotate(120deg);
+  transition: transform 600ms ease-out; 
+}
+.header-spin-exit {
+  transform: rotate(120deg);
+}
+.header-spin-exit-active {
+  transform: rotate(0);
+  transition: transform 600ms ease-out; 
+}
+
+.menu-show-enter {
+  opacity: 0;
+}
+.menu-show-enter-active {
+  opacity: 1;
+  transition: opacity 300ms; 
+}
+.menu-show-exit {
+  opacity: 1;
+}
+.menu-show-exit-active {
+  opacity: 0;
+  transition: opacity 300ms; 
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 90vw;
+  }
 }
