@@ -42,7 +42,7 @@ export default function MainSlider({slides}: {slides: Array<ISlide>}) {
         
           <Slide slideState={slide} showState={show}/>
 
-          <CSSTransition
+          {/* <CSSTransition
             in={show}
             timeout={3000}
             classNames="spin"
@@ -60,7 +60,7 @@ export default function MainSlider({slides}: {slides: Array<ISlide>}) {
             <div className={styles.secondary__circle}>
               <Image src="/bigcircle.svg" fill alt=''></Image>
             </div>
-          </CSSTransition>
+          </CSSTransition> */}
         
           <div className={styles.progress}>
             <div className="container">

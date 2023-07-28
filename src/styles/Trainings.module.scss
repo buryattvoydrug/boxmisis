@@ -1,0 +1,46 @@
+.training__card {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 17px;
+  max-width: 100%;
+  padding: 15px 25px 25px;
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+  }
+  &__title {
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .training__card {
+    flex-direction: column-reverse;
+    padding: 15px 20px 25px;
+    &__info {
+      width: 100%;
+    }
+    &__title {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+    &__subtitle {
+      font-size: 18px;
+    }
+  }
+}

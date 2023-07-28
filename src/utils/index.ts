@@ -16,3 +16,14 @@ export const getMainSlides = async () => {
     }
     console.error("Could not fetch blog posts!")
 }
+
+export const getTrainings = async () => {
+    const entries = await client.getEntries({
+        content_type: 'variants',
+        select: 'fields.shedule,fields.title,fields.subtitle,fields.coachs,fields.link'
+    })
+    if (entries.items) {
+        return entries.items;
+    }
+    console.error("Could not fetch blog posts!")
+}

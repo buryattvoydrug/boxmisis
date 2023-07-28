@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Header from '@/components/Header'
 import MainSlider, { ISlide } from '@/components/MainSlider'
-import { getMainSlides } from '@/utils'
+import { getMainSlides, getTrainings } from '@/utils'
+import Trainings from './trainings'
+import { IVariants } from '../../contentful'
 
-export default function Home({slides}: {slides: Array<ISlide>}) {
+export default function Home({slides, trainings}: {slides: Array<ISlide>, trainings: Array<IVariants>}) {
   return (
     <>
       <div className="wrapper">
@@ -23,10 +25,12 @@ export default function Home({slides}: {slides: Array<ISlide>}) {
 }
 
 export async function getStaticProps() {
+  const variants = await getTrainings();
   const slides = await getMainSlides();
   return {
       props: {
           slides: slides,
+          trainings: variants,
       }
   }
 }
