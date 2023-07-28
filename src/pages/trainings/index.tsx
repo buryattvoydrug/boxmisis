@@ -1,8 +1,13 @@
 import Header from '@/components/Header'
+import { getTrainings } from '@/utils';
 import Head from 'next/head'
 import React from 'react'
+import { IVariants, IVariantsFields } from '../../../contentful';
+import styles from '@/styles/Trainings.module.scss';
+import TrainingItem from '@/components/TrainingItem';
 
-export default function Trainings() {
+export default function Trainings({trainings}: {trainings: Array<IVariants>}) {
+
   return (
     <>
       <div className="page-wrapper">
@@ -15,10 +20,24 @@ export default function Trainings() {
         <Header/>
         <main>
           <div className="container">
-            
+            <h1 className="page__title">Тренировки</h1>
+            <div className={styles.trainings}>
+              {trainings.map((item) => 
+                <TrainingItem key={item.sys.id} item={item.fields}/>
+              )}
+            </div>
           </div>
         </main>
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const variants = await getTrainings();
+  return {
+      props: {
+        trainings: variants,
+      }
+  }
 }

@@ -65,6 +65,37 @@ export interface IAwards extends Entry<IAwardsFields> {
   };
 }
 
+export interface ICoachsFields {
+  /** ФИО */
+  name?: string | undefined;
+
+  /** Должность */
+  post?: string | undefined;
+
+  /** Регалии */
+  regards?: string | undefined;
+
+  /** Фото */
+  photo?: Asset | undefined;
+}
+
+export interface ICoachs extends Entry<ICoachsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "coachs";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IContactsFields {
   /** Время работы */
   time?: string | undefined;
@@ -313,9 +344,44 @@ export interface IStaff extends Entry<IStaffFields> {
   };
 }
 
+export interface IVariantsFields {
+  /** Расписание */
+  shedule?: Record<string, any> | undefined;
+
+  /** Заголовок */
+  title?: string | undefined;
+
+  /** Подзаголовок или цена */
+  subtitle?: string | undefined;
+
+  /** Ссылка */
+  link?: string | undefined;
+
+  /** Тренеры */
+  coachs?: ICoachs[] | undefined;
+}
+
+export interface IVariants extends Entry<IVariantsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "variants";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export type CONTENT_TYPE =
   | "alert"
   | "awards"
+  | "coachs"
   | "contacts"
   | "contactsNames"
   | "events"
@@ -323,11 +389,13 @@ export type CONTENT_TYPE =
   | "mainPage"
   | "mainSlider"
   | "news"
-  | "staff";
+  | "staff"
+  | "variants";
 
 export type IEntry =
   | IAlert
   | IAwards
+  | ICoachs
   | IContacts
   | IContactsNames
   | IEvents
@@ -335,7 +403,8 @@ export type IEntry =
   | IMainPage
   | IMainSlider
   | INews
-  | IStaff;
+  | IStaff
+  | IVariants;
 
 export type LOCALE_CODE = "en-US";
 
